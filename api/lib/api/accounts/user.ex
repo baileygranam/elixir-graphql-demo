@@ -31,6 +31,10 @@ defmodule Api.Accounts.User do
     |> hash_password
   end
 
+  defp hash_password(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
+    change(changeset, Bcrypt.add_hash(password))
+  end
+
   defp hash_password(changeset) do
     changeset
   end
