@@ -5,7 +5,17 @@ defmodule ApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ApiWeb do
+  scope "/api" do
     pipe_through :api
+    # Forward API requests to GraphQL layer
+    forward "/graphql", Absinthe.Plug, schema: Api.Schema
+    if Mix.env() == :dev do
+      forward "/graphiql",
+        Absinthe.Plug.GraphiQL,
+        init_opts: [
+          schema: Api.Schema,
+          interface: :simple
+        ]
+    end
   end
 end
