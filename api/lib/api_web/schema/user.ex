@@ -10,7 +10,7 @@ defmodule Api.Schema.Types.User do
     field(:role, :string)
   end
 
-  input_object :user_input_type do
+  input_object :user_input do
     field(:first_name, non_null(:string))
     field(:last_name, non_null(:string))
     field(:email, non_null(:string))

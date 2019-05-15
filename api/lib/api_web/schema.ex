@@ -14,8 +14,12 @@ defmodule Api.Schema do
     end
   end
 
-  # # mutations
-  # mutation do
-  #   nil
-  # end
+  # mutations
+  mutation do
+    @desc "Create a user"
+    field :create_user, type: :user do
+      arg(:input, non_null(:user_input))
+      resolve(&Resolvers.User.create_user/3)
+    end
+  end
 end
