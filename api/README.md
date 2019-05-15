@@ -1,20 +1,14 @@
-# Api
+# Elixir GraphQL Api Demo
 
-To start your Phoenix server:
+The purpose of this repository is to provide a very basic GraphQL API with Elixir and Absinthe.
+
+To start the server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
   * Install Node.js dependencies with `cd assets && npm install`
   * Start Phoenix endpoint with `mix phx.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Now you can visit the interactive GraphQL interface [`localhost:4001/api/graphiql`](http://localhost:4001/api/graphiql) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
