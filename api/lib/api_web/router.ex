@@ -10,12 +10,7 @@ defmodule ApiWeb.Router do
     # Forward API requests to GraphQL layer
     forward "/graphql", Absinthe.Plug, schema: Api.Schema
     if Mix.env() == :dev do
-      forward "/graphiql",
-        Absinthe.Plug.GraphiQL,
-        init_opts: [
-          schema: Api.Schema,
-          interface: :simple
-        ]
+      forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Api.Schema, interface: :simple
     end
   end
 end
